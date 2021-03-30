@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: NotoSansKR;
+  src: url(../webfonts/NotoSansKR-Regular.otf);
+  src: url(../webfonts/NotoSansKR-Regular.woff) format("woff"),
+    url(../webfonts/NotoSansKR-Regular.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: Sansation;
+  src: url(../webfonts/Sansation_Regular.otf);
+  src: url(../webfonts/Sansation_Regular.woff) format("woff"),
+    url(../webfonts/Sansation_Regular.ttf) format("ttf");
+}
+body {
+  font-family: Sansation, NotoSansKR;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  background-color: #eaeaea;
+}
+
+.wrap {
+  width: 100%;
+}
+
+#center {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- header --- */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #4c77b1;
+}
+
+header #center {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c81;
+}
+
+header ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+header ul li a {
+  display: block;
+  padding: 0 15px;
+  color: #4c77b1;
+}
+
+header ul li:hover a {
+  color: #0f4c81;
+  font-weight: bold;
+}
+
+/* --- main --- */
+.main {
+  position: relative;
+  /* width: 1400px; */
+  height: 700px;
+  /* padding-top: 50px; */
+  /* margin: 0 auto; */
+  /* box-sizing: border-box; */
+  color: #eaeaea;
+  /* background-color: #002554; */
+  /* border-radius: 0 0 150px 150px; */
+}
+
+.main::before {
+  content: "";
+  display: block;
+  width: 1400px;
+  height: 50px;
+  padding-top: 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #002554;
+  border-radius: 0 0 150px 150px;
+  transition: all 1s ease;
+}
+
+.main.on::before {
+  height: 700px;
+}
+
+.main #center {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.main h2 {
+  position: absolute;
+  top: 45%;
+  height: 70px;
+  font-size: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main h2 ul {
+  padding: 0 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.main h2 ul li {
+  height: 70px;
+}
+
+.main p {
+  position: absolute;
+  bottom: 50px;
+  font-size: 14px;
+  animation: scroll_ani 0.7s linear infinite alternate;
+}
+
+@keyframes scroll_ani {
+  from {
+    bottom: 50px;
+  }
+  to {
+    bottom: 59px;
+  }
+}
+
+/* --- about me --- */
+.about {
+  margin-top: 100px;
+}
+
+.about #center {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.about .about_lt {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.about .about_lt h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c81;
+}
+
+.about .about_lt p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.about .about_lt p strong {
+  font-weight: bold;
+  color: #002554;
+}
+
+.about .about_lt p span {
+  font-size: 14px;
+}
+
+.about .about_lt div {
+  margin-top: 50px;
+}
+
+.about .about_lt div h4 {
+  font-weight: bold;
+  color: #0f4c81;
+}
+
+.about .about_lt div p {
+  font-size: 16px;
+}
+
+.about .about_gt {
+  width: 45%;
+}
+
+.about .about_gt ul li {
+  margin-bottom: 15px;
+}
+
+.about .about_gt ul li .graph {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin: 5px 0;
+}
+
+.about .about_gt ul li .graph p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.about .about_gt ul li .graph p:nth-child(1) {
+  background-color: #ccc;
+}
+
+.about .about_gt ul li .graph p:nth-child(2) {
+  width: 0;
+  background: linear-gradient(90deg, #002554, #0f4c81, #4c77b1);
+  transition: all 1s;
+}
+
+.about.on .about_gt ul li:nth-child(1) .graph p:nth-child(2) {
+  width: 90%;
+}
+
+.about.on .about_gt ul li:nth-child(2) .graph p:nth-child(2) {
+  width: 90%;
+}
+
+.about.on .about_gt ul li:nth-child(3) .graph p:nth-child(2) {
+  width: 80%;
+}
+
+.about.on .about_gt ul li:nth-child(4) .graph p:nth-child(2) {
+  width: 70%;
+}
+
+.about.on .about_gt ul li:nth-child(5) .graph p:nth-child(2) {
+  width: 65%;
+}
+
+.about.on .about_gt ul li:nth-child(6) .graph p:nth-child(2) {
+  width: 90%;
+}
+
+.about.on .about_gt ul li:nth-child(7) .graph p:nth-child(2) {
+  width: 85%;
+}
+
+.about.on .about_gt ul li:nth-child(8) .graph p:nth-child(2) {
+  width: 50%;
+}
+
+.about.on .about_gt ul li:nth-child(9) .graph p:nth-child(2) {
+  width: 70%;
+}
+
+/* --- works --- */
+.works {
+  margin-top: 100px;
+  height: 1900px;
+  overflow: hidden;
+}
+
+.works h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c81;
+}
+
+.works .site {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.works .site > div {
+  position: relative;
+  width: 550px;
+}
+
+.works .site .genesis {
+  height: 400px;
+}
+
+.works .site .bigwave {
+  height: 800px;
+  margin-top: 100px;
+}
+
+.works .site .cdg {
+  height: 800px;
+  margin-top: -400px;
+}
+
+.works .site .megabox {
+  height: 400px;
+  margin-top: 100px;
+}
+
+.works .site .starwars {
+  height: 400px;
+  margin-top: 0;
+}
+
+.works .site > div > div {
+  position: absolute;
+  top: 400px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.works .site > div.on > div {
+  top: 0;
+  opacity: 1;
+}
+
+.works .site div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 0 100%;
+}
+
+.works .site div:hover a {
+  background-position: 0 0;
+}
+
+.works .site div:nth-child(1) a {
+  background-color: #ccc;
+}
+
+.works .site div:nth-child(2) a {
+  background-color: #ccc;
+}
+
+.works .site div:nth-child(3) a {
+  background-image: url(../images/changdeokpalace.png);
+}
+
+.works .site div:nth-child(4) a {
+  background-image: url(../images/megabox.png);
+}
+
+.works .site div:nth-child(5) a {
+  background-image: url(../images/starwars.png);
+}
+
+.works .site div a p {
+  margin: 15px;
+  line-height: 1.3;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.works .site div:hover a p {
+  opacity: 1;
+}
+
+.works .site div a p span {
+  font-size: 14px;
+}
+
+.works .site div a p strong {
+  font-size: 36px;
+}
+
+/* --- contact --- */
+.contact {
+  margin-top: 100px;
+}
+
+.contact h2 {
+  margin: 300px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: #0f4c81;
+}
+
+.contact h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact .content {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact .copyright {
+  margin: 70px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.contact .copyright strong {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c81;
+}
